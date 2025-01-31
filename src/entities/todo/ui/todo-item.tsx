@@ -35,16 +35,17 @@ export const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
   return (
     <div className={wrapperCN}>
       <div className="flex items-center space-x-4">
-        <button
+        <Button
+          variant="icon"
           onClick={onToggle}
-          className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
+          className={`w-6 h-6 rounded-3xl border-2 flex items-center justify-center transition-colors ${
             todo.completed
               ? "bg-purple-600 border-purple-600"
               : "border-gray-300 hover:border-purple-600"
           }`}
         >
           {todo.completed && <Check size={14} className="text-white" />}
-        </button>
+        </Button>
         <span
           className={`text-gray-800 pr-2 ${
             todo.completed ? "line-through text-gray-400" : ""
